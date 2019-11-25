@@ -4,6 +4,10 @@ export const SMURF_DATA_START = "SMURF_DATA_START";
 export const SMURF_DATA_SUCCESS = "SMURF_DATA_SUCCESS";
 export const SMURF_DATA_FAIL = "SMURF_DATA_FAIL";
 
+// export const POST_DATA_START = "POST_DATA_START";
+// export const POST_DATA_SUCCESS = "POST_DATA_SUCCESS";
+// export const POST_DATA_FAIL = "POST_DATA_FAIL";
+
 export const getSmurfData = () => dispatch => {
     dispatch({ type: SMURF_DATA_START });
 
@@ -25,3 +29,10 @@ export const getSmurfData = () => dispatch => {
             })
         })
 }
+
+// export const postSmurfData = (smurf) => {
+//     return {
+//         type: POST_DATA_START,
+//         payload: smurf
+//     }
+// }
