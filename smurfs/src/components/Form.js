@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { postSmurfData } from "../actions";
+import { connect } from "react-redux"
 
 const Form = props => {
 
@@ -11,15 +13,21 @@ const Form = props => {
 
     const postSmurf = event => {
         event.preventDefault();
-        axios
-            .post("http://localhost:3333/smurfs", smurf)
-            .then(res => {
-                console.log(res);
-            })
-            .catch(err => {
-                console.log(err);
-            })
-      }
+        console.log(smurf);
+        props.postSmurfData(smurf);
+    }
+
+    // const postSmurf = event => {
+    //     event.preventDefault();
+    //     axios
+    //         .post("http://localhost:3333/smurfs", smurf)
+    //         .then(res => {
+    //             console.log(res);
+    //         })
+    //         .catch(err => {
+    //             console.log(err);
+    //         })
+    //   }
 
     return (
         <div>
@@ -32,5 +40,11 @@ const Form = props => {
         </div>
     )
 }
+const mapPropsToState = state => {
+    return state;
+  };
+  
+  // export default App;
+  export default connect(mapPropsToState, { postSmurfData })(Form);
 
-export default Form;
+// export default Form;
